@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class BruteForceTest {
+class SudokuSolverTest {
     private static final String SOLVED = """
         534678912
         672195348
@@ -30,7 +30,7 @@ class BruteForceTest {
         287419635
         345286179""";
         var b = BoardFactory.of(board);
-        var alg = new BruteForce();
+        var alg = new SudokuSolver();
 
         // when
         var solved = alg.solve(b);
@@ -40,7 +40,7 @@ class BruteForceTest {
     }
 
     @Test
-    void solve1() {
+    void solve() {
         // given
         String board = """
         500608902
@@ -53,12 +53,12 @@ class BruteForceTest {
         207410605
         040080009""";
         var b = BoardFactory.of(board);
-        var alg = new BruteForce();
+        var alg = new SudokuSolver();
 
         // when
-        var solved = alg.solve(b);
+        var solvedBoard = alg.solve(b);
 
         // then
-        assertThat(solved).isEqualTo(BoardFactory.of(SOLVED));
+        assertThat(solvedBoard).isEqualTo(BoardFactory.of(SOLVED));
     }
 }

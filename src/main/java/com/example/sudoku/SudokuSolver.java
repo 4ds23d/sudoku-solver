@@ -2,7 +2,7 @@ package com.example.sudoku;
 
 import java.util.*;
 
-class BruteForce implements Algorithm {
+class SudokuSolver implements Algorithm {
 
     @Override
     public Board solve(Board board) {
