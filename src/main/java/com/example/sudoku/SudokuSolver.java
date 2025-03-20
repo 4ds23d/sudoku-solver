@@ -47,7 +47,10 @@ class SudokuSolver implements Algorithm {
                 return null;
             }
             var positionWithOptions = steps.get();
-            return solve(newBoard, positionWithOptions.position(), positionWithOptions.variants());
+            var solved = solve(newBoard, positionWithOptions.position(), positionWithOptions.variants());
+            if (solved != null) {
+                return solved;
+            }
         }
 
         return null;
